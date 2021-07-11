@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bookstore</title>
+    <link href="css/grid.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <img id="logo" src="images/logo.png">
+            <div id="toolbar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search..">
+                    <input list="category-list" name="search-category" placeholder="All Categories">
+                    <datalist id="category-list">
+                        <option value="Drama">
+                            <option value="Sci-Fi">
+                                <option value="Comedy">
+                                    <option value="Horror">
+                                        <option value="Romance">
+                    </datalist>
+                    <button class="btn-basket"><i class="fas fa-shopping-cart"></i></button>
+
+                </div>
+                <div class="mobile-search" style="display: none;"><i class="fas fa-search"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-7">
+                        <div class="title">
+                            Secrets Never Die
+                        </div>
+                        <div class="author">
+                            by Melinda Leigh
+                        </div>
+                        <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="books">
+                            <img src="images/books/Secrets%20Never%20Die.jpg">
+                            <img src="images/books/The%20Rescue.jpg">
+                            <img src="images/books/Where%20The%20Desert%20Meets%20The%20Sea.jpg">
+                            <img src="images/books/One%20Word%20Kill.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="cart-button">
+        <i class="fas fa-shopping-cart"></i>
+    </div>
+
+    <div class="container" id="category-bar">
+        <button id="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul id="category-menu">
+            <li class="category-opt">
+                <button class="opt-anchor active" onclick="loadHome();">Home</button>
+            </li>
+            <li class="category-opt">
+                <button class="opt-anchor" onclick="loadStore();">Bookstore</button>
+            </li>
+            <li class="category-opt">
+                <button class="opt-anchor" onclick="loadFind();">Find Us</button>
+            </li>
+            <li class="category-opt">
+                <button class="opt-anchor" onclick="loadAbout();">About</button>
+            </li>
+            <li class="category-opt">
+                <button class="opt-anchor" onclick="loadContact();">Contact</button>
+            </li>
+
+        </ul>
+        <ul id="mobile-category-menu">
+            <li class="mobile-category-opt">
+                <button class="opt-anchor active" onclick="loadHome();">Home</button>
+            </li>
+            <li class="mobile-category-opt">
+                <button class="opt-anchor" onclick="loadStore();">Bookstore</button>
+            </li>
+            <li class="mobile-category-opt">
+                <button class="opt-anchor" onclick="loadFind();">Find Us</button>
+            </li>
+            <li class="mobile-category-opt">
+                <button class="opt-anchor" onclick="loadAbout();">About</button>
+            </li>
+            <li class="mobile-category-opt">
+                <button class="opt-anchor" onclick="loadContact();">Contact</button>
+            </li>
+
+        </ul>
+        <script>
+            $('#hamburger').click(() => {
+                if ($("#mobile-category-menu").css("height") == "230px") {
+                    $("#mobile-category-menu").css("height", "0px");
+                } else {
+                    $("#mobile-category-menu").css("height", "230px");
+                }
+            })
+        </script>
+    </div>
+    <div id="pageDisplay">
+
+        <div id="cart-modal" class="modal-overlay">
+                <div class="modal-box">
+                    <div class="modal-header">
+                        <i class="fas fa-times close-modal" style="float:right;"></i>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-8">
+                                <table style="text-align: center; width: 100%;">
+                                    <tr>
+                                        <th>Cover</th>
+                                        <th>Title</th>
+                                        <th>Unit Price</th>
+                                        <th>QTY</th>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 120px;">
+                                            <img src="images/books/Where%20The%20Desert%20Meets%20The%20Sea.jpg" style="width: 100%;">
+                                        </td>
+                                        <td>When The Desert Meets The Sea</td>
+                                        <td>
+                                            $13.50
+                                        </td>
+                                        <td>
+                                            <input type="number" value="1" style="width: 30px;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 120px;">
+                                            <img src="images/books/One%20Word%20Kill.jpg" style="width: 100%;">
+                                        </td>
+                                        <td>One Word Kill</td>
+                                        <td>
+                                            $13.50
+                                        </td>
+                                        <td>
+                                            <input type="number" value="1" style="width: 30px;">
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            <div class="col-4">
+                                <div class="pre-buy-right">
+                                    <h3><span style="float:left;">Total:</span>$27.00</h3>
+                                    <a href="#" id="add-cart">Check Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div id="homePage">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <h1>For the Love of Reading</h1>
+                        <p>We have more than 13 million titles to choose from, from the earliest board books to the all-time classics of literature.</p>
+                        <h3>Purchasing Power</h3>
+                        <p>Used books are often treasures that are out-of-print or rare. With Wish Lists you can choose to be notified the instant we find a copy, see how often we find rare titles, and see who else is interested.</p>
+                        <h3>FREE Shipping &amp; More</h3>
+                        <p>When you've found the books you want we'll ship qualifying orders to your door for <b>FREE</b> in 100% recyclable packaging. If there is no demand for a book, we will donate it to charity, or we'll recycle it.</p>
+                        <p>If you like what we have to offer, Tell-A-Friend and we'll give you more reasons to read!</p>
+
+                    </div>
+                    <div class="col-6">
+                        <div class="video-container" style="width: 100%; padding: 0px 10%; box-sizing: border-box;">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/9e6SwhrsEzU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="padding: 20px;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row" id="parallel-image">
+                <div class="container">
+                    <div class="row" style="padding: 30px 0px 30px 0px;">
+                        <div class="col-8">
+                            <h2 class="content-title">Find Our Branches Near You</h2>
+                            <h3 class="content-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn-primary" style="background-color: rgb(247, 134, 110); margin-top: 40px; display:block; ">Find Us</button>
+                        </div>
+                    </div>
+
+                    <style>
+
+                    </style>
+                </div>
+            </div>
+            <style>
+
+            </style>
+
+            <div id="thumbnails" class="container">
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="images/thumbnail1.jpeg">
+                    </div>
+                    <h5>Read What You Love</h5>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-angle-double-right"></i></a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="images/thumbnail2.jpeg">
+                    </div>
+                    <h5>Areas for Reading</h5>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-angle-double-right"></i></a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="images/thumbnail3.jpeg">
+                    </div>
+                    <h5>Borrow a Book</h5>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </div>
+            <style>
+
+            </style>
+        </div>
+
+        <div id="aboutPage" style="display:none;">
+            <div class="container">
+                <h1>About Us</h1>
+                <p>BOOKS is a design-minded, multi-disciplinary brand offering objects, events, and experiences related to books and reading. We are based in the Amman downtown in Jordan. </p>
+                <h2 style="margin-top: 50px;">Our Philosophy</h2>
+                <p>Some people like to read on a screen. Other people need the variety and artistry, the sight, smell, and feel of actual books.They love seeing them on their shelves; they love having shelves for them. They love taking them along when they leave the house, and stacking them by their bedsides. They love finding old letters and bookmarks in them. They like remembering where they bought them or who they received them from. They want to read in a way that offers a rich experience, more than the words only: the full offering of a book. They are particular about covers, they want to surround themselves with the poetry of good design. They can't pass a bookstore without going in and getting something, they keep a library card and use it. They are allergic to cheap bestsellers; they delight in the out-of-the-way and the rare, the well-made and the hard-to-accomplish. They take care of their books; they know a book is only theirs until it passes on to someone else. They are good stewards of a timeless object. These are the people we're working for.</p>
+
+
+            </div>
+
+        </div>
+
+        <div id="contactPage" style="display:none;">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Ordering books online from "Books" is fast, easy, and safe. But sometimes you want to hear a friendly, human voice reassuring you that your order has been correctly placed. We understand — that's why our Contact Center is staffed with the friendliest and most reassuring human beings on the planet. If you prefer to order by phone, there's no better way to do it!</p>
+
+                <h4>Email:</h4>
+                <p>Questions about your order: <a href="#" style="text-decoration: none; color:#0482a5;">orders@books.com</a></p>
+                <p>All other questions: <a href="#" style="text-decoration: none; color:#0482a5;">help@books.com</a></p>
+
+                <h4>Media &amp; Marketing:</h4>
+                <p>"Books" Media Representive: <a href="#" style="text-decoration: none; color:#0482a5;">press@books.com</a></p>
+                <p>Marketing Representive: <a href="#" style="text-decoration: none; color:#0482a5;">marketing@books.com</a></p>
+
+                <h4>Partnership Program:</h4>
+                <p><a href="#" style="text-decoration: none; color:#0482a5;">partners@books.com</a></p>
+
+            </div>
+
+        </div>
+
+        <div id="findPage" style="display:none;">
+            <div class="container">
+                <h1>Find Us</h1>
+                <p>Thinking of making a visit? "Books" is located in the heart of Amman downtown, within walking distance of the Citadel.</p>
+                <div style="width: 100%; min-height: 300px; margin-top: 50px;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2965.0824050173574!2d-93.63905729999999!3d41.998507000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sWebFilings%2C+University+Boulevard%2C+Ames%2C+IA!5e0!3m2!1sen!2sus!4v1390839289319" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="storePage" style="display:none; position: relative;">
+            <div class="container">
+                <div class="container" id="home-items">
+                    <div class="book-category">
+                        <i class="fas fa-book"></i>New Arrivals
+                    </div>
+                    <div class="item">
+                        <img src="images/books/Cold%20Waters.jpg">
+                        <div class="item-name">Cold Water</div>
+                        <div class="item-price">$13.50</div>
+
+                    </div>
+                    <div class="item">
+                        <img src="images/books/One%20Word%20Kill.jpg">
+                        <div class="item-name">One Word Kill</div>
+                        <div class="item-price">$13.50</div>
+                    </div>
+                    <div class="item">
+                        <img src="images/books/The%20Overdie%20Life%20of%20Amy%20Byler.jpg">
+                        <div class="item-name">The Overdie life of Amy Byler</div>
+                        <div class="item-price">$13.50</div>
+                    </div>
+
+                    <div class="item">
+                        <img src="images/books/I'm%20Fine%20And%20Neither%20Are%20You.jpg">
+                        <div class="item-name">I'm Fine And Neither Are You</div>
+                        <div class="item-price">$13.50</div>
+                    </div>
+                    <div class="item">
+                        <img src="images/books/Where%20The%20Desert%20Meets%20The%20Sea.jpg">
+                        <div class="item-name">Where The Desert Meets The Sea</div>
+                        <div class="item-price">$13.50</div>
+                    </div>
+                    <div class="item">
+                        <img src="images/books/The%20Rescue.jpg">
+                        <div class="item-name">The Rescue</div>
+                        <div class="item-price">$13.50</div>
+                    </div>
+                    <div class="item">
+                        <img src="images/books/Secrets%20Never%20Die.jpg">
+                        <div class="item-name">Secrets Never Die</div>
+                        <div class="item-price">$13.50</div>
+                    </div>
+                    <div class="book-category">
+                        <i class="fas fa-book"></i>Fantasy
+                    </div>
+                    <div class="item">
+                        <img src="images/books/Dawn%20of%20Wonder.jpg">
+                        <div class="item-name">Dawn of Wonder</div>
+                        <div class="item-price">$13.50</div>
+                    </div>
+                    <div class="item">
+                        <img src="images/books/The%20Books%20of%20Caledan%20Trilogy.jpg">
+                        <div class="item-name">The Books of Caledan Trilogy</div>
+                        <div class="item-price">$13.50</div>
+                    </div>
+                    <div class="item">
+                        <img src="images/books/Six%20of%20Crows.jpg">
+                        <div class="item-name">Six of Crows</div>
+                        <div class="item-price">$13.50</div>
+                    </div>
+                    <div class="item">
+                        <img src="images/books/Spinning%20Silver.jpg">
+                        <div class="item-name">Spinning Silver</div>
+                        <div class="item-price">$13.50</div>
+                    </div>
+                    <div class="item">
+                        <img src="images/books/The%20Hobbit.jpg">
+                        <div class="item-name">The Hobbit</div>
+                        <div class="item-price">$13.50</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="shop-modal" class="modal-overlay">
+                <div class="modal-box">
+                    <div class="modal-header">
+                        <i class="fas fa-times close-modal" style="float:right;"></i>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="pre-buy-left">
+                                    <img src="images/books/Where%20The%20Desert%20Meets%20The%20Sea.jpg" style="height: 100%;">
+                                    <h2>Where The Desert Meets The Sea</h2>
+                                    <small>Werner Sonne</small>
+                                    <p style="margin-top: 20px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                                    
+                                </div>
+
+                            </div>
+                            <div class="col-4">
+                                <div class="pre-buy-right">
+                                    <h3>$34.00</h3>
+                                    <a href="#" id="add-cart">Add to My Cart</a>
+                                    <a href="#" id="add-wishlist">Add to Wishlist</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+            $('#cart-button').click(function(){
+                $('#cart-modal').show();
+            })
+            $('.close-modal').click(function(){
+                $('#shop-modal').hide();
+                $('#cart-modal').hide();
+            })
+            $('.item').click(function(){
+                $('#shop-modal').show();
+            })
+            </script>
+            <style>
+                .modal-body tr:nth-child(even){
+                    background: #ece2e2;
+                }
+                .modal-body table, td, th {
+                  /*border: 1px solid #999;*/
+                    padding: 5px;
+                }
+                .pre-buy-left {
+                    box-sizing: border-box;
+                    padding: 20px;
+                    width: 90%;
+                }
+                .pre-buy-left img {
+                    float: left;
+                    width: 200px;
+                    margin-right: 30px;
+                }
+                .pre-buy-right {
+                    width: 90%;
+                    margin: auto;
+                }
+                
+                .pre-buy-right a {
+                    display: block;
+                    text-align: center;
+                    text-decoration: none;
+                    padding: 10px;
+                }
+                
+                .pre-buy-right h3 {
+                    text-align: right;
+                    margin-top: 20px;
+                }
+                
+                #add-cart {
+                    border: 1px solid #b10121;
+                    background: #b10121;
+                    color: #eee;
+                    margin-bottom: 10px;
+                }
+                
+                #add-wishlist {
+                    border: 1px solid #aaa;
+                    background: #fff;
+                    color: #b10121;
+                }
+                
+                .modal-overlay {
+                    display: none;
+                    width: 100%;
+                    height: 100vh;
+                    background: rgba(0, 0, 0, 0.8);
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    z-index: 600;
+                }
+                
+                .modal-box {
+                    overflow: auto;
+                    width: 80%;
+                    min-height: 500px;
+                    background: #fff;
+                    border: 1px solid #aaa;
+                    border-radius: 3px;
+                    margin: auto;
+                    margin-top: 10%;
+                }
+                
+                .modal-header {
+                    height: 35px;
+                    border-bottom: 1px solid #ddd;
+                }
+                
+                .modal-header i {
+                    font-size: 20px;
+                    line-height: 1.75;
+                    color: #444;
+                    margin-right: 10px;
+                    cursor: pointer;
+                }
+            </style>
+        </div>
+
+
+
+
+
+
+    </div>
+    <script>
+        $(".opt-anchor").click(function () {
+            $(".opt-anchor").removeClass("active");
+            $(this).toggleClass("active");
+        })
+
+        function loadHome() {
+            $(this).toggleClass("active");
+            $('#pageDisplay').children().hide();
+            $('#homePage').show();
+        }
+
+        function loadAbout() {
+            $(this).toggleClass("active");
+            $('#pageDisplay').children().hide();
+            $('#aboutPage').show();
+        }
+
+        function loadContact() {
+            $('#pageDisplay').children().hide();
+            $('#contactPage').show();
+        }
+
+        function loadFind() {
+            $('#pageDisplay').children().hide();
+            $('#findPage').show();
+        }
+
+        function loadStore() {
+            $('#pageDisplay').children().hide();
+            $('#storePage').show();
+        }
+    </script>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png">
+                </div>
+                <div class="col-3">
+
+                    <ul>
+                        <p class="footer-title">Links</p>
+                        <li>About Us</li>
+                        <li>Developers</li>
+                        <li>Contact Us</li>
+                        <li>Terms and Service</li>
+                    </ul>
+                </div>
+                <div class="col-3">
+
+                    <ul>
+                        <p class="footer-title">Links</p>
+                        <li>About Us</li>
+                        <li>Developers</li>
+                        <li>Contact Us</li>
+                        <li>Terms and Service</li>
+                    </ul>
+                </div>
+                <div class="col-3">
+
+                    <ul>
+                        <p class="footer-title">Links</p>
+                        <li>About Us</li>
+                        <li>Developers</li>
+                        <li>Contact Us</li>
+                        <li>Terms and Service</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="copyright">Books &copy; All Rights Reserved - 2019</div>
+    </footer>
+</body>
+
+</html>

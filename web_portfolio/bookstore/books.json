@@ -1,0 +1,47 @@
+{
+    "categories": 
+    [
+        {
+            "category": "New Arrivals",
+            "books": 
+            [
+                {
+                    "name": "Cold Waters",
+                    "price": "$14.50",
+                    "image": "http://localhost/client-side/images/books/Cold Waters.jpg"
+                },
+                {
+                    "name": "One Word Kill",
+                    "price": "$10.00",
+                    "image": "http://localhost/client-side/images/books/One Word Kill.jpg"
+                },
+                {
+                    "name": "The Overdie life of Amy Byler",
+                    "price": "$7.00",
+                    "image": "http://localhost/client-side/images/books/The Overdie life of Amy Byler.jpg"
+                },
+                {
+                    "name": "I'm Fine And Neither Are You",
+                    "price": "$12.50",
+                    "image": "http://localhost/client-side/images/books/I'm Fine And Neither Are You.jpg"
+                },
+                {
+                    "name": "Where The Desert Meets The Sea",
+                    "price": "$10.00",
+                    "image": "http://localhost/client-side/images/books/Where The Desert Meets The Sea.jpg"
+                }
+            ]
+        },
+        {
+            "category": "Fantasy",
+            "books": 
+            [
+                {
+                    "name": "Dawn Of Wonder",
+                    "price": "$9.99",
+                    "image": "http://localhost/client-side/images/books/Dawn of Wonder.jpg"
+                }
+            ]
+        }
+    ]
+}

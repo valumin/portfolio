@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+}
+
+.row {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+div[class^="col"] {
+    float: left;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+div[class^="col"]::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.container {
+    box-sizing: border-box;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+.container-fluid {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+}
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+    
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+@media (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    .push-right {
+        float: right;
+    }
+
+    .pull-left {
+        float: left;
+    }
+}

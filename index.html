@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Levitate - CV/Resume Template</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ventrum CV/Resume Template">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Will Ventrum">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/57e40deaef.js"></script>
+    <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+    <script src="libraries/twentytwenty-master/js/jquery.event.move.js" type="text/javascript"></script>
+    <script src="libraries/twentytwenty-master/js/jquery.twentytwenty.js" type="text/javascript"></script>
+    <script src="scripts/main.js"></script>
+    <script src="libraries/justifiedGallery/jquery.justifiedGallery.min.js"></script>
+    <script src="libraries/scrollnav/jquery.singlePageNav.min.js"></script>
+    <script src="libraries/wowjs/wowjs.min.js"></script>
+    <link rel="stylesheet" href="libraries/twentytwenty-master/css/twentytwenty.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="libraries/timeline/timeline.css" type="text/css">
+    <link rel="stylesheet" href="libraries/justifiedGallery/justifiedGallery.min.css" />
+</head>
+
+<body>
+    <!-- Desktop navigation menu -->
+    <nav id="desktop-menu">
+        <ul>
+            <li><a class="nav-menu-item" href="#intro-page">Home</a></li>
+            <li><a class="nav-menu-item" href="#about">About</a></li>
+            <li><a class="nav-menu-item" href="#skills">Skills</a></li>
+            <li><a class="nav-menu-item" href="#experience">Experience</a></li>
+            <li><a class="nav-menu-item" href="#education">Education</a></li>
+            <li><a class="nav-menu-item" href="#portfolio">Portfolio</a></li>
+            <!--<li><a class="nav-menu-item" href="#contact">Contact</a></li>-->
+        </ul>
+        <div class="container">
+            <!-- Mobile navigation menu icon -->
+            <div id="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+    </div>
+    </nav>
+    <!-- Mobile navigation menu -->
+    <div id="mobile-menu" class="hidden">
+            <li><a href="#intro-page">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+    </div>
+    <!-- Intro page (Header) -->
+    <section id="intro-page" class="container spacing-medium">
+        <div class="row">
+            <div id="main-intro-image" class="col-md-6 animated fadeInDown delay-1s">
+                <div class="circle-image">
+                    <img class="circle-image-animated" src="images/profile.jpg" />
+                </div>
+            </div>
+            <div id="main-intro-text" class="col-md-6 order-md-first animated fadeInUp delay-1s">
+                Hi, I'm Mohammad.
+                <br> I'm a <span class="blue-touch">developer</span> and
+                <br>I create more than<span class="blue-touch"> just websites</span>.
+
+                <div class="main-intro-contact">
+                    <li><i class="fas fa-envelope"></i>mohdbilto@gmail.com</li>
+                    <!--<li><i class="fas fa-phone-alt"></i>+11 926 381 7721</li>-->
+                    <li><i class="fas fa-map-marker-alt"></i>Istanbul, Turkey</li>
+                </div>
+
+                <div class="main-intro-social">
+                    <a href="#"><span><i class="fab fa-facebook-f hoverable"></i></span></a>
+                    <a href="#"><span><i class="fab fa-twitter hoverable"></i></span></a>
+                    <a href="#"><span><i class="fab fa-github hoverable"></i></span></a>
+                    <a href="#"><span><i class="fab fa-flickr hoverable"></i></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 wow fadeInLeft delay-1s">
+                    <div id="showcase-slider" class="collapse-center-align">
+                        <div id="twentytwenty">
+                            <!-- The before image is first -->
+                            <img src="web_portfolio/thumbs/acornist.jpg" />
+                            <!-- The after image is last -->
+                            <img src="web_portfolio/thumbs/code.jpg" />
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 wow fadeInRight delay-1s">
+                    <h1 class="section-title">About Me</h1>
+                    <p class="section-paragraph">Hello! My name is Mohammad Bilto. I started my journey in 2014 simply by tweaking website designs, and I loved it. From there, everything took off. My programming experience expanded much more by each year. I'm proud to say that I started as a hobbyist, then it turned into a profession.</p>
+                    <!--<a href="#">
+                        <button class="btn-rounded blue">Download CV<i class="fas fa-download"></i></button>
+                    </a>-->
+                    <div class="small-title">#Tags</div>
+                    <span class="profession-tag">FullStack Dev</span>
+                    <span class="profession-tag">Unity3D</span>
+                    <span class="profession-tag">InternetOfThings</span>
+                    <span class="profession-tag">3D Modelling</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Skills section -->
+    <section id="skills" class="spacing-medium wow zoomIn">
+        <div class="container">
+            <h1 class="section-title text-center"><i class="fas fa-pen-nib"></i></i></i>Skills</h1>
+            <div id="skills-box">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="skills-wrapper">
+                            <div class="skills-icon"><i class="far fa-calendar"></i></div>
+                            <div class="skills-container">
+                                <h3 class="section-small-title">Programming Languages</h3>
+
+                            </div>
+                            <div class="skill-name">C#</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 97%" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="skill-name">C++</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="skill-name">Java</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="skill-name">HTML/CSS/JS</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="skill-name">NodeJS</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="skill-name">PHP</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="skill-name">Python</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="skills-wrapper">
+                            <div class="skills-icon"><i class="far fa-calendar"></i></div>
+                            <div class="skills-container">
+                                <h3 class="section-small-title">Software Engineering</h3>
+
+                            </div>
+                            <div class="skill-name">Data Structres</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="skill-name">Object Oriented Programming</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="skill-name">Software Development Life Cycle</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="skill-name">Agile Development</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Experience Section -->
+    <section id="experience" class="spacing-medium wow fadeInUp">
+        <div class="container">
+            <h1 class="section-title text-center"><i class="fas fa-suitcase"></i>Experience</h1>
+            <div class="timeline-box">
+                <div class="timeline-block timeline-block-right">
+                    <div class="marker"></div>
+                    <div class="timeline-content">
+                        <h3>2013</h3>
+                        <span>How it all started</span>
+                        <p>As a little boy, I was very fond of online games, especially the MMORPG genre. I realized that I was more curious than my friends who were the same age as me. While they spent hours playing, I would spend most of my time trying to edit game textures and sound effects</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block timeline-block-left">
+                    <div class="marker"></div>
+                    <div class="timeline-content">
+                        <h3>2014</h3>
+                        <span>First attemp to write code</span>
+                        <p>Back then, I learned that I can see any website's code by inspecting it from any browser, it blew me away. I learned that I can copy websites and edit them however I wanted. This was my first time learning about HTML elements</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block timeline-block-right">
+                    <div class="marker"></div>
+                    <div class="timeline-content">
+                        <h3>2015</h3>
+                        <span>Like a rocket!</span>
+                        <p>This year was so much different. My learning curve took off! I was learning QuickBASIC at school, and I would go home to continue learning html and Javascript. Also I participated in a programming competition between all Jordanian schools. I got the 15th place. Not so great, but it's a start</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block timeline-block-left">
+                    <div class="marker"></div>
+                    <div class="timeline-content">
+                        <h3>2016</h3>
+                        <span>Graduated high school</span>
+                        <p>I made it. Next I applied for a university, Software Engineering of course. Just after one semeseter, my university announced a new major "Web Engineering". And I didn't hesitate to change to it. That's when I started learning more advanced programming topics</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block timeline-block-right">
+                    <div class="marker"></div>
+                    <div class="timeline-content">
+                        <h3>2017 - Now</h3>
+                        <span>It's a blend</span>
+                        <p>All the previous years, I was working on my knowledge foundation. But then everything accelerated. Just in a couple of years, I was already working as a freelance web developer, working on my personal projects from web design, game dev, 3d modelling, and IoT devices. I was also a web development teacher in an institution until I recently moved abroad. F</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Education Section -->
+    <section id="education" class="spacing-medium wow fadeInUp">
+        <div class="container">
+            <h1 class="section-title text-center"><i class="fas fa-graduation-cap"></i>Education</h1>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-box">
+                        <h3 class="card-title">IT Diploma <span>Sweileh Secondary School</span></h3>
+                        <div class="card-year">2015-2017</div>
+                        <div class="card-text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-box">
+                        <h3 class="card-title">Web Engineering <span>Philadelphia University</span></h3>
+                        <div class="card-year">2017-2020 (Postponed)</div>
+                        <div class="card-text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="wow fadeInRight">
+        <div class="container">
+            <h1 class="section-title text-center"><i class="fas fa-project-diagram"></i>Portfolio</h1>
+
+            <ul id="portfolio-filter" class="text-center">
+                <li class="filter-option" data-category="showall">Show All</li>
+                <li class="filter-option" data-category="webdesign">Web Design</li>
+                <li class="filter-option" data-category="gamedev">Game Dev</li>
+            </ul>
+
+            <ol id="portfolio-content" class="grid">
+                <div id="justified" class="row">
+
+                    <a href="web_portfolio/acornist/index.html" target="_blank" data-category="webdesign" class="portfolio-item">
+
+                        <img src="web_portfolio/thumbs/acornist.jpg">
+                        <div>
+                            <div class="browse-icon"><i class="fas fa-search"></i></div>
+                            <div class="portfolio-title">Website Template</div>
+                            <div class="portfolio-subtitle">Digital Product</div>
+                        </div>
+
+                    </a>
+
+                    <a href="web_portfolio/bookstore/index.html" target="_blank" data-category="webdesign" class="portfolio-item">
+                        <img src="web_portfolio/thumbs/bookstore.jpg">
+                        <div>
+                            <div class="browse-icon"><i class="fas fa-search"></i></div>
+                            <div class="portfolio-title">Website Template</div>
+                            <div class="portfolio-subtitle">Book Store</div>
+                        </div>
+                    </a>
+
+                    <a href="http://damia.tech/" target="_blank" data-category="webdesign" class="portfolio-item">
+                        <img src="web_portfolio/thumbs/damia.jpg">
+                        <div>
+                            <div class="browse-icon"><i class="fas fa-search"></i></div>
+                            <div class="portfolio-title">Website Template</div>
+                            <div class="portfolio-subtitle">IoT Product</div>
+                        </div>
+                    </a>
+
+                    <a data-category="gamedev" class="portfolio-item">
+                        <img src="web_portfolio/thumbs/minesweeper.jpg">
+                        <div>
+                            <!--<div class="browse-icon"><i class="fas fa-search"></i></div>-->
+                            <div class="portfolio-title">MineSweeper 3D</div>
+                            <div class="portfolio-subtitle">Game Dev</div>
+                        </div>
+                    </a>
+
+                    <a  data-category="gamedev" class="portfolio-item">
+                        <img src="web_portfolio/thumbs/crane.jpg">
+                        <div>
+                            <!--<div class="browse-icon"><i class="fas fa-search"></i></div>-->
+                            <div class="portfolio-title">Crane Builder</div>
+                            <div class="portfolio-subtitle">Game Dev</div>
+                        </div>
+                    </a>
+                    <a  data-category="gamedev" class="portfolio-item">
+                        <img src="web_portfolio/thumbs/inventory.jpg">
+                        <div>
+                            <!--<div class="browse-icon"><i class="fas fa-search"></i></div>-->
+                            <div class="portfolio-title">Unity Inventory System</div>
+                            <div class="portfolio-subtitle">Game Dev</div>
+                        </div>
+                    </a>
+                </div>
+            </ol>
+
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <!--<section id="contact" class="spacing-medium">
+        <div class="container">
+            <h1 class="section-title text-center"><i class="fas fa-id-card"></i>Contact</h1>
+
+            <div class="contact-box">
+                <div class="row">
+                    <div class="col-md-6 wow fadeInLeft">
+                        <h3 class="card-title light">Send Me a Message</h3>
+                        <div class="card-form">
+                            <form>
+                                <input name="name" type="text" placeholder="Name" />
+                                <input name="email" type="email" placeholder="Email" />
+                                <input name="subject" type="text" placeholder="Subject" />
+                                <textarea name="message" placeholder="Message"></textarea>
+                                <button type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6 wow fadeInRight">
+                        <div id="map" style="width: 100%;">
+                            <iframe src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Create route map</a></iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+    </section>-->
+    <!-- Copyrights -->
+    <div id="copyrights" class="spacing-medium container">All Rights Reserved &copy; Mohammad Bilto - 2021</div>
+</body>
+
+</html>

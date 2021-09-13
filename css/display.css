@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+
+/* CUSTOM */
+.container-small {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    max-width: 768px;
+    margin: auto;
+    padding: 5rem 0px;
+}
+/* CUSTOM */
+header {
+    position: relative;
+    height: 600px;
+    text-align: center;
+    color: #fff;
+}
+
+#header-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+}
+
+#header-content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#header-title {
+    font-size: 6rem;
+    font-family: 'Bebas Neue', 'sans-serif';
+    text-shadow: 0 2px 0 rgb(0 0 0 / 50%);
+}
+
+#header-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.75rem;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 50%);
+    margin: 0 0 2rem 0;
+    color: #bab1a8;
+}
+
+#main-wrapper {
+    position: relative;
+    background-image: url('../images/crane-content-bg.png');
+    width: 100%;
+    min-height: 100vh;
+}
+
+#single-title {
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', 'sans-serif';
+    font-size: 3rem;
+    color: #cd412b;
+    margin-bottom: .5rem;
+}
+
+.content-box {
+    background-color: rgba(20,19,18,.9);
+    box-sizing: border-box;
+    padding: 40px;
+    color: #bab1a8;
+}
+
+#copyrights {
+    font-family: 'Open Sans', 'sans-serif';
+    font-weight: 600;
+    font-size: 12px;
+    color: #3e3e3e;
+    text-align: center;
+}
+
+.full-overlay {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    top: 0;
+    left: 0;
+}
